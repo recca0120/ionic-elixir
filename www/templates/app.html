@@ -1,0 +1,114 @@
+<ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Demo</h1>
+</ion-header-bar>
+<ion-content>
+    <ion-list>
+        <ion-item class="item-divider">
+            Device
+        </ion-item>
+        <ion-item>
+            Platform: <span ng-bind="device.platform"></span>
+        </ion-item>
+        <ion-item>
+            uuid: <span ng-bind="device.uuid"></span>
+        </ion-item>
+        <ion-item>
+            Manufacturer: <span ng-bind="device.manufacturer"></span>
+        </ion-item>
+        <ion-item>
+            Model: <span ng-bind="device.model"></span>
+        </ion-item>
+        <ion-item>
+            Version: <span ng-bind="device.version"></span>
+        </ion-item>
+        <ion-item>
+            Cordova: <span ng-bind="device.cordova"></span>
+        </ion-item>
+        <ion-item class="item-divider">
+            App Version
+        </ion-item>
+        <ion-item>
+            Version: <span ng-bind="app.version"></span>
+        </ion-item>
+        <ion-item>
+            Build: <span ng-bind="app.build"></span>
+        </ion-item>
+        <ion-item>
+            Name: <span ng-bind="app.name"></span>
+        </ion-item>
+        <ion-item>
+            Package: <span ng-bind="app.package"></span>
+        </ion-item>
+        <ion-item class="item-divider">
+            Push Notification
+        </ion-item>
+        <ion-item>
+            RegistrationId: <span ng-bind="push.registrationId"></span>
+        </ion-item>
+        <ion-item>
+            Notification: <span ng-bind="push.notification|json"></span>
+        </ion-item>
+        <ion-item class="item-divider">
+            Network State
+        </ion-item>
+        <ion-item>
+            State: <span ng-bind="network.state"></span>
+        </ion-item>
+        <ion-item class="item-divider">
+            StatueBar
+        </ion-item>
+        <ion-toggle ng-model="statusBar.visibility" ng-change="statusBar.changed()" toggle-class="toggle-calm">
+            Visibility
+        </ion-toggle>
+        <ion-toggle ng-model="statusBar.overlaysWebView" ng-change="statusBar.changed()" toggle-class="toggle-calm">
+            Overlays WebView
+        </ion-toggle>
+        <ion-item class="item-input item-select">
+            <div class="input-label">
+                Style
+            </div>
+            <select ng-model="statusBar.style" ng-options="style.text for style in statusBar.styles" ng-change="statusBarChanged()">
+            </select>
+        </ion-item>
+        <ion-item class="item-input item-select">
+            <div class="input-label">
+                Style Color
+            </div>
+            <select ng-model="statusBar.styleColor" ng-options="color.text for color in statusBar.styleColors" ng-change="statusBarChanged()">
+            </select>
+        </ion-item>
+        <ion-item class="item-divider">
+            Badege
+        </ion-item>
+        <ion-item class="item-button-right">
+            &nbsp;
+            <button class="button button-positive" ng-click="badge.increase()">
+                Increase
+            </button>
+        </ion-item>
+        <ion-item class="item-button-right">
+            &nbsp;
+            <button class="button button-positive" ng-click="badge.decrease()">
+                Decrease
+            </button>
+        </ion-item>
+        <ion-item class="item-divider">
+            Barcode Scanner
+        </ion-item>
+        <ion-item class="item-button-right">
+            &nbsp;
+            <button class="button button-positive" ng-click="barcodeScanner()">
+                Scan
+            </button>
+        </ion-item>
+        <ion-item class="item-divider">
+            In App Browser
+        </ion-item>
+        <ion-item class="item-button-right">
+            &nbsp;
+            <button class="button button-positive" ng-click="inAppBrowser()">
+                Open
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>
